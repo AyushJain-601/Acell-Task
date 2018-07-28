@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  function form_validate(){
+    var name_err="";
+    var email_err="";
+    var pass_err="";
+    var number_err="";
+    var firstname="";
+    var lastname="";
+    var email="";
+    var password="";
+    var number="";
+    firstname=document.forms["forminput"]["firstname"].value;
+    lastname=document.forms["forminput"]["lastname"].value;
+    email=document.forms["forminput"]["email"].value;
+    password=document.forms["forminput"]["password"].value;
+    number=document.forms["forminput"]["mob"].value;
+    if(firstname==""||lastname==""){
+      name_err="Please enter a valid value";
+    }
+    else if (firstname.length>15 || lastname.length>15) {
+      name_err="Max length is 15";
+    }
+    else if (firstname[0]==firstname[0].toLowerCase()||lastname[0]==lastname[0].toLowerCase()) {
+      name_err="First alphabet should be upper case";
+    }
+    else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(forminput.email.value))){
+      email_err="invalid Email";
+    }
+    if(password.length<6||password.length>15){
+      pass_err="Length should be between 6-15";
+    }
+    else if(password!=password.toLowerCase()){
+      pass_err="Atleast 1 lower case alphabet required";
+    }
+    else if(password!=password.toUpperCase()){
+      pass_err="Atleast 1 upper case alphabet required";
+    }
+    else if (password!="/[0-9]/") {
+      pass_err="Atleast 1 numeric value required";
+    }
+    else if(password!="!@#$%^&*"){
+      pass_err="Atleast 1 special character required";
+    }
+    var atposition=email.indexOf("@");
+    var dotposition=email.lastIndexOf(".");
+    if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){
+      email_err="Invalid E-mail address";
+    }
+    if (number!="/[0-9]/") {
+      number_err="please enter only numeric value";
+    }
+    else {
+      window.location="wwww.google.com";
+    }
+    document.getElementById("nameerr").innerHTML="*"+name_err;
+    document.getElementById("emailerr").innerHTML="*"+email_err;
+    document.getElementById("passerr").innerHTML="*"+pass_err;
+    document.getElementById("numbererr").innerHTML="*"+number_err;
+  }
+  </script>
+  <style>
+  body {
+    background-image: url(signup.jpg);
+    width:100%;
+    background-size:100%;
+    color:white;
+    overflow-x: hidden;
+
+  }
+  *{
+    box-sizing: border-box;
+  }
+  #template {
+    font-size:4vw;
+    margin-left:33%;
+  }
+  #login {
+    font-size:1.5vw;
+    padding-top:5px;
+    margin-left:15%;
+  }
+  #login a{
+    font-size:1.5vw;
+    color:#4fffb2;
+    text-decoration: none;
+    }
+  input[type=text], input[type=password],input[type=date] {
+    width:85%;
+    font-size:25;
+    padding:10px 10px;
+    margin:10px 0px;
+    display:inline-block;
+    border: 1px solid #ccc;
+    opacity:0.7;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  form {
+    color:white;
+    font-size: 2vw;
+    margin-left:15%;
+  }
+  button {
+    width:85%;
+    padding:10px 5px;
+    background-color:red;
+    border:1px solid red;
+    box-shadow:2px 2px 2px black;
+    opacity:0.8;
+  }
+  button:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+  #container{
+    background: rgba(0,0,0,0.65);
+    margin-bottom:10px;
+    margin-top: 3%;
+    margin-left:32%;
+    border-radius:10px;
+    margin-right: 32%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media screen and (max-width:600px){
+    input[type=text],input[type=password],input[type=date] {
+      width:100%;
+      margin:0px;
+    }
+    #login{
+      width:100%;
+      font-size: 3vw;
+      padding:0px;
+    }
+    form{
+      font-size: 3vw;
+      padding:0px;
+    }
+    button{
+      width:100%;
+    }
+    #login a{
+      font-size:3vw;
+    }
+    #template {
+      font-size: 5vw;
+    }
+  }
+  </style>
+</head>
+<body>
+<div id=container>
+      <div id="template">
+        <b>Sign Up</b>
+      </div>
+      <form name="forminput">
+        <label for="firstname"><b>First Name</b></label><br>
+        <input type="text" name="firstname" id="firstname" placeholder="Enter Your Frist Name">
+        <div id="nameerr" style="color:red;"></div>
+        <label for="lastname"><b>Last Name</b></label><br>
+        <input type="text" name="lastname" id="lastname" placeholder="Enter Your Last Name">
+        <div id="nameerr" style="color:red;"></div>
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" name="email" id="email" placeholder="Enter Email">
+        <div id="emailerr" style="color:red;"></div>
+        <label for="password"><b>Password</b></label><br>
+        <input type="password" name="password" id="password" placeholder="Enter Password">
+        <div id="passerr" style="color:red;"></div>
+        <label for="mob"><b>Mobile Number</b></label><br>
+        <input type="text" name="mob" id="mob" placeholder="Enter Mobile number" maxlength="10">
+        <div id="numbererr" style="color:red;"></div>
+      <div id="signupbutton">
+        <button style="font-size:20px;" type="button" onclick="form_validate()"><b>Sign Up</b></button>
+      </div>
+      </form>
+      <div id="login">
+        <b>Already have account?</b><a href="index.html"><b>Log in</b></a>
+      </div>
+</div>
+</body>
+</html>

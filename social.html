@@ -1,0 +1,168 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body{
+  overflow: hidden;
+}
+  #icon{
+    width:35px;
+    height:35px;
+    position:absolute;
+    top:0.6vw;
+    left:8.1vw;
+  }
+  #redirect{
+    font-style:arial;
+    left:75.5vw;
+    top:2vh;
+    font-size:15px;
+    font-weight:bold;
+    position:absolute;
+
+  }
+  #redirect a{
+      text-decoration: none;
+      cursor:pointer;
+      color:#acb9c2;
+
+  }
+  #profilepic{
+    position: relative;
+    left:88.5vw;
+    top:1.5vh;
+    width:30px;
+    height:30px;
+    border:1px white;
+  }
+  #topcontainer{
+    background-color: #283e4a;
+    height:7.8vh;
+  }
+  #midcontainer{
+    background: url("socialbg2.jpg");
+    height: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+  }
+  #midbg{
+    background-color: rgba(225,225,225,0.9);
+    width:33vw;
+    height: 50vh;
+    position: relative;
+    top:15.5vh;
+    left:33vw;
+    border-radius: 5px;
+  }
+
+#template{
+  font-size:60px;
+  font-family:helvetica;
+  font-weight:bolder;
+  position: relative;
+  color: black;
+  left:7.5vw;
+  top:2vh;
+
+}
+#templateicon{
+  width:60px;
+  height:60px;
+  position: relative;
+  left:7.5vw;
+  top:-0.5vh;
+}
+input[type="text"] ,input[type="password"]{
+  width:27vw;
+  position: relative;
+  top:4vh;
+  left:3vw;
+  box-shadow: 0px 0px 0.1px 0.1px black;}
+
+#signin{
+  position: relative;
+  width:27vw;
+  font-size: 18px;
+  font-style: arial;
+  font-weight: bold;
+  top:4vh;
+  left:3vw;
+}
+#forgotpass{
+  position: relative;
+  top:7vh;
+  left:12.5vw;
+  font-size: 13px;
+
+}
+#member{
+  position: relative;
+  font-size: 13px;
+  top:5vh;
+  left:11vw;
+}
+#bottomcontent{
+  list-style-type: none;
+  position: relative;
+  background-color: rgb(32, 32, 32);
+  width:100%;
+  height: 55px;
+}
+#bottomitem{
+  color:white;
+  float:left;
+  padding-top:2.2vh;
+  padding-left: 1.8vw;
+  position: relative;
+  left:9.2vw;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+  <div id="container">
+    <div id="topcontainer">
+      <img src="linkedin.png" id="icon">
+      <p id="redirect"><a>Back to LinkedIn.com</a></p>
+      <img src="portfolio.jpg" id="profilepic" class="img-circle" style="">
+    </div>
+    <div id="midcontainer">
+        <div id="midbg">
+          <div id="mid-midcontainer">
+            <div ><span id="template">Linked</span> <img src="linkedin.png" id="templateicon" ></div>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="username" placeholder="Email address or phone number" >
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password" >
+              </div>
+              <button type="button" id="signin" name="signin" class="btn btn-primary">Sign In</button>
+              <p id="forgotpass"><a>Forgot password?</a></p>
+              <p id="member">Not a member?<a>Join now</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="bottomcontainer">
+        <ul id="bottomcontent">
+          <li id="bottomitem">LinkedIn Corporation © 2018</li>
+          <li id="bottomitem"><b>User Agreement</b></li>
+          <li id="bottomitem"><b>Privacy Policy</b></li>
+          <li id="bottomitem"><b>Ad Choices</b></li>
+          <li id="bottomitem"><b>Community Guidelines</b></li>
+          <li id="bottomitem"><b>Cookie Policy</b></li>
+          <li id="bottomitem"><b>Copyright Policy</b></li>
+          <li id="bottomitem"><b>Send Feedback</b></li>
+        </ul>
+      </div>
+    </div>
+
+</body>
+</html>
